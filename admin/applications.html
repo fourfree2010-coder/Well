@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>รับสมัครสมาชิก | Admin</title>
+  <link rel="stylesheet" href="../css/admin.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="admin-layout">
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <div class="logo">AP</div>
+        <div class="brand">
+          <strong>ADMIN PANEL</strong>
+          <small id="sidebarSiteName">GODMYEGXO</small>
+        </div>
+      </div>
+      <nav class="sidebar-nav">
+        <div class="nav-section">
+          <div class="nav-label">จัดการเว็บไซต์</div>
+          <a href="index.html" class="nav-item"><i class="fas fa-chart-line"></i> ภาพรวม</a>
+          <a href="members.html" class="nav-item"><i class="fas fa-users"></i> จัดการสมาชิก</a>
+          <a href="applications.html" class="nav-item active"><i class="fas fa-user-plus"></i> รับสมัครสมาชิก</a>
+          <a href="settings.html" class="nav-item"><i class="fas fa-cog"></i> ตั้งค่าเว็บไซต์</a>
+        </div>
+      </nav>
+      <div class="sidebar-footer">
+        <a href="../index.html" class="btn-outline" target="_blank"><i class="fas fa-external-link-alt"></i> เปิดหน้าเว็บไซต์</a>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <div class="topbar-left">
+          <h1>คำขอเข้าแก๊ง (Applications)</h1>
+          <p>จัดการผู้ที่ส่งแบบ QR Code สมัครเข้าแก๊งของคุณ</p>
+        </div>
+        <div class="topbar-right">
+          <button class="btn-secondary"><i class="fas fa-qrcode"></i> แสดง QR Code รับสมัคร</button>
+          <button class="btn-primary"><i class="fas fa-toggle-on"></i> เปิดรับสมัครอยู่</button>
+        </div>
+      </header>
+
+      <div class="card">
+        <div class="empty-state">
+          <i class="fas fa-inbox"></i>
+          <h3>รอการพิจารณา (0)</h3>
+          <p>ไม่มีคำขอเข้าแก๊งใหม่ในขณะนี้</p>
+        </div>
+      </div>
+    </main>
+  </div>
+  <script src="../js/config.js"></script>
+  <script src="../js/firebase-config.js"></script>
+  <script src="../js/db.js"></script>
+</body>
+</html>

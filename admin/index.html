@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Panel | GODMYEGXO</title>
+  <link rel="stylesheet" href="../css/admin.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="admin-layout">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <div class="logo">AP</div>
+        <div class="brand">
+          <strong>ADMIN PANEL</strong>
+          <small id="sidebarSiteName">GODMYEGXO</small>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <div class="nav-section">
+          <div class="nav-label">จัดการเว็บไซต์</div>
+          <a href="index.html" class="nav-item active" data-page="dashboard">
+            <i class="fas fa-chart-line"></i> ภาพรวม
+          </a>
+          <a href="members.html" class="nav-item" data-page="members">
+            <i class="fas fa-users"></i> จัดการสมาชิก
+          </a>
+          <a href="applications.html" class="nav-item" data-page="applications">
+            <i class="fas fa-user-plus"></i> รับสมัครสมาชิก
+          </a>
+          <a href="settings.html" class="nav-item" data-page="settings">
+            <i class="fas fa-cog"></i> ตั้งค่าเว็บไซต์
+          </a>
+        </div>
+
+        <div class="nav-section">
+          <div class="nav-label">PARTNERS</div>
+          <a href="#" class="nav-item disabled">
+            <i class="fas fa-handshake"></i> Partners
+          </a>
+          <a href="#" class="nav-item disabled">
+            <i class="fas fa-crown"></i> VIP Upgrade
+          </a>
+        </div>
+      </nav>
+
+      <div class="sidebar-footer">
+        <a href="../index.html" class="btn-outline" target="_blank">
+          <i class="fas fa-external-link-alt"></i> เปิดหน้าเว็บไซต์
+        </a>
+        <button class="btn-logout" id="logoutBtn">
+          <i class="fas fa-sign-out-alt"></i> ออกจากระบบ
+        </button>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <header class="topbar">
+        <div class="topbar-left">
+          <h1>สวัสดี, <span id="adminName">Admin</span></h1>
+          <p>ศูนย์จัดการเว็บไซต์และรายชื่อสมาชิกของคุณ พร้อมปรับแต่งได้ทุกเวลา</p>
+        </div>
+        <div class="topbar-right" style="display:flex;align-items:center;gap:16px;">
+          <div id="dbStatus" style="font-size:0.8rem;"></div>
+          <a href="../members.html" class="btn-primary" target="_blank">
+            เปิดเว็บไซต์ <i class="fas fa-external-link-alt"></i>
+          </a>
+        </div>
+      </header>
+
+      <!-- Stats Cards -->
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-icon blue"><i class="fas fa-users"></i></div>
+          <div class="stat-info">
+            <span class="stat-label">สมาชิกทั้งหมด</span>
+            <strong class="stat-value" id="totalMembers">0</strong>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon gold"><i class="fas fa-crown"></i></div>
+          <div class="stat-info">
+            <span class="stat-label">ผู้ก่อตั้ง</span>
+            <strong class="stat-value" id="totalFounders">0</strong>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon purple"><i class="fas fa-star"></i></div>
+          <div class="stat-info">
+            <span class="stat-label">หัวหน้า</span>
+            <strong class="stat-value" id="totalLeaders">0</strong>
+          </div>
+        </div>
+        <div class="stat-card ready">
+          <div class="stat-icon green"><i class="fas fa-check-circle"></i></div>
+          <div class="stat-info">
+            <span class="stat-label">สถานะเว็บไซต์</span>
+            <strong class="stat-value">พร้อม</strong>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Actions + Activity -->
+      <div class="dashboard-grid">
+        <div class="card">
+          <div class="card-header">
+            <h3><i class="fas fa-bolt"></i> QUICK ACTIONS</h3>
+            <span>จัดการเว็บไซต์ของคุณ</span>
+          </div>
+          <div class="quick-actions">
+            <a href="members.html" class="action-btn">
+              <i class="fas fa-user-plus"></i>
+              <div>
+                <strong>เพิ่มสมาชิก</strong>
+                <small>เพิ่มโปรไฟล์เข้าสู่ระบบทันที</small>
+              </div>
+              <i class="fas fa-chevron-right"></i>
+            </a>
+            <a href="members.html" class="action-btn">
+              <i class="fas fa-users-cog"></i>
+              <div>
+                <strong>ดูรายชื่อสมาชิก</strong>
+                <small>ตรวจสอบและจัดการข้อมูล</small>
+              </div>
+              <i class="fas fa-chevron-right"></i>
+            </a>
+            <a href="settings.html" class="action-btn">
+              <i class="fas fa-palette"></i>
+              <div>
+                <strong>ปรับแต่งเว็บไซต์</strong>
+                <small>เปลี่ยน ธีม สี และ โทนเสียง</small>
+              </div>
+              <i class="fas fa-chevron-right"></i>
+            </a>
+            <a href="../members.html" class="action-btn" target="_blank">
+              <i class="fas fa-eye"></i>
+              <div>
+                <strong>เปิดหน้าเว็บไซต์</strong>
+                <small>ดูหน้าเว็บแบบสาธารณะ</small>
+              </div>
+              <i class="fas fa-chevron-right"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <h3><i class="fas fa-history"></i> ACTIVITY LOG</h3>
+            <span>กิจกรรมล่าสุด</span>
+          </div>
+          <div class="activity-list" id="activityLog">
+            <div class="activity-item">
+              <div class="activity-icon"><i class="fas fa-info-circle"></i></div>
+              <div class="activity-content">
+                <strong>ยินดีต้อนรับสู่ระบบ</strong>
+                <small>ระบบพร้อมใช้งานแล้ว</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="../js/config.js"></script>
+  <script src="../js/firebase-config.js"></script>
+  <script src="../js/db.js"></script>
+  <script src="../js/admin.js"></script>
+</body>
+</html>

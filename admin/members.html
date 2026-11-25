@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>จัดการสมาชิก | Admin</title>
+  <link rel="stylesheet" href="../css/admin.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="admin-layout">
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <div class="logo">AP</div>
+        <div class="brand">
+          <strong>ADMIN PANEL</strong>
+          <small id="sidebarSiteName">GODMYEGXO</small>
+        </div>
+      </div>
+      <nav class="sidebar-nav">
+        <div class="nav-section">
+          <div class="nav-label">จัดการเว็บไซต์</div>
+          <a href="index.html" class="nav-item"><i class="fas fa-chart-line"></i> ภาพรวม</a>
+          <a href="members.html" class="nav-item active"><i class="fas fa-users"></i> จัดการสมาชิก</a>
+          <a href="applications.html" class="nav-item"><i class="fas fa-user-plus"></i> รับสมัครสมาชิก</a>
+          <a href="settings.html" class="nav-item"><i class="fas fa-cog"></i> ตั้งค่าเว็บไซต์</a>
+        </div>
+      </nav>
+      <div class="sidebar-footer">
+        <a href="../index.html" class="btn-outline" target="_blank"><i class="fas fa-external-link-alt"></i> เปิดหน้าเว็บไซต์</a>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <div class="topbar-left">
+          <h1>รายชื่อสมาชิก</h1>
+          <p>จัดการรายชื่อสมาชิกในเว็บไซต์</p>
+        </div>
+        <div class="topbar-right" style="display:flex;align-items:center;gap:16px;">
+          <div id="dbStatus" style="font-size:0.8rem;"></div>
+          <button class="btn-primary" id="addMemberBtn">
+            <i class="fas fa-plus"></i> เพิ่มสมาชิก
+          </button>
+        </div>
+      </header>
+
+      <div class="card">
+        <div class="table-toolbar">
+          <div class="search-box">
+            <i class="fas fa-search"></i>
+            <input type="text" id="memberSearch" placeholder="ค้นหาสมาชิก..." />
+          </div>
+          <div class="total-count">ทั้งหมด: <strong id="memberTotal">0</strong></div>
+        </div>
+
+        <div class="table-wrapper">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>สมาชิก</th>
+                <th>ระดับ</th>
+                <th>จัดการ</th>
+              </tr>
+            </thead>
+            <tbody id="membersTableBody">
+              <!-- Filled by JS -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Modal เพิ่ม/แก้ไขสมาชิก -->
+  <div class="modal" id="memberModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 id="modalTitle">เพิ่มสมาชิก</h3>
+        <button class="modal-close" id="closeModal">&times;</button>
+      </div>
+      <form id="memberForm">
+        <input type="hidden" id="memberId" />
+        <div class="form-group">
+          <label>ชื่อสมาชิก *</label>
+          <input type="text" id="memberName" required placeholder="เช่น Wall Winterfall" />
+        </div>
+        <div class="form-group">
+          <label>ยศ / ระดับ *</label>
+          <select id="memberRank" required>
+            <option value="founder">Founder</option>
+            <option value="leader">Leader</option>
+            <option value="member" selected>Member</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>ลิงก์รูปโปรไฟล์ (URL)</label>
+          <input type="url" id="memberAvatar" placeholder="https://example.com/avatar.jpg" />
+          <small>แนะนำใช้ postimages.org หรือ imgur</small>
+        </div>
+        <div class="form-group">
+          <label>ลิงก์ Facebook</label>
+          <input type="url" id="memberFacebook" placeholder="https://facebook.com/..." />
+        </div>
+        <div class="form-group">
+          <label>ลิงก์อื่น ๆ (Discord / IG ฯลฯ)</label>
+          <input type="url" id="memberOtherLink" placeholder="https://..." />
+        </div>
+        <div class="form-actions">
+          <button type="button" class="btn-secondary" id="cancelBtn">ยกเลิก</button>
+          <button type="submit" class="btn-primary">บันทึก</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="../js/config.js"></script>
+  <script src="../js/firebase-config.js"></script>
+  <script src="../js/db.js"></script>
+  <script src="../js/admin-members.js"></script>
+</body>
+</html>

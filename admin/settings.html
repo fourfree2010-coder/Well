@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ตั้งค่าเว็บไซต์ | Admin</title>
+  <link rel="stylesheet" href="../css/admin.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="admin-layout">
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <div class="logo">AP</div>
+        <div class="brand">
+          <strong>ADMIN PANEL</strong>
+          <small id="sidebarSiteName">GODMYEGXO</small>
+        </div>
+      </div>
+      <nav class="sidebar-nav">
+        <div class="nav-section">
+          <div class="nav-label">จัดการเว็บไซต์</div>
+          <a href="index.html" class="nav-item"><i class="fas fa-chart-line"></i> ภาพรวม</a>
+          <a href="members.html" class="nav-item"><i class="fas fa-users"></i> จัดการสมาชิก</a>
+          <a href="applications.html" class="nav-item"><i class="fas fa-user-plus"></i> รับสมัครสมาชิก</a>
+          <a href="settings.html" class="nav-item active"><i class="fas fa-cog"></i> ตั้งค่าเว็บไซต์</a>
+        </div>
+      </nav>
+      <div class="sidebar-footer">
+        <a href="../index.html" class="btn-outline" target="_blank"><i class="fas fa-external-link-alt"></i> เปิดหน้าเว็บไซต์</a>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <div class="topbar-left">
+          <h1>ตั้งค่าเว็บไซต์</h1>
+          <p>จัดการรูปแบบเว็บไซต์และความปลอดภัย</p>
+        </div>
+      </header>
+
+      <!-- Tabs -->
+      <div class="tabs">
+        <button class="tab active" data-tab="general"><i class="fas fa-info-circle"></i> ข้อมูลพื้นฐาน</button>
+        <button class="tab" data-tab="design"><i class="fas fa-palette"></i> ตกแต่งหน้าเว็บ</button>
+        <button class="tab" data-tab="music"><i class="fas fa-music"></i> เสียงเพลง</button>
+        <button class="tab" data-tab="danger"><i class="fas fa-exclamation-triangle"></i> อันตราย</button>
+      </div>
+
+      <!-- General Tab -->
+      <div class="tab-content active" id="tab-general">
+        <div class="card">
+          <h3><i class="fas fa-globe"></i> ตั้งค่าหน้าเว็บไซต์</h3>
+          <div class="form-grid">
+            <div class="form-group">
+              <label>ชื่อหน้าเว็บไซต์</label>
+              <input type="text" id="settingTitle" placeholder="GODMYEGXO" />
+            </div>
+            <div class="form-group">
+              <label>คำโปรยใต้ชื่อเว็บไซต์</label>
+              <input type="text" id="settingSubtitle" placeholder="EST. 2026" />
+            </div>
+            <div class="form-group">
+              <label>ข้อความปุ่มเข้าสู่เว็บไซต์</label>
+              <input type="text" id="settingEnterText" placeholder="ENTER" />
+            </div>
+            <div class="form-group">
+              <label>ลิงก์ไอคอนเว็บไซต์ (Favicon)</label>
+              <input type="url" id="settingFavicon" placeholder="https://example.com/icon.png" />
+            </div>
+            <div class="form-group">
+              <label>รูปภาพหรือวิดีโอพื้นหลัง (หน้า Gate)</label>
+              <input type="url" id="settingBgGate" placeholder="https://example.com/bg.jpg หรือ YouTube" />
+            </div>
+            <div class="form-group">
+              <label>รูปภาพพื้นหลัง (หน้า Members)</label>
+              <input type="url" id="settingBgMembers" placeholder="https://example.com/bg2.jpg" />
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3><i class="fas fa-share-alt"></i> โลโก้และโซเชียลมีเดีย</h3>
+          <div class="form-grid">
+            <div class="form-group full">
+              <label>รูปโลโก้กลางหน้า (URL)</label>
+              <input type="url" id="settingLogo" placeholder="https://..." />
+            </div>
+            <div class="form-group">
+              <label>Discord URL</label>
+              <input type="url" id="settingDiscord" placeholder="https://discord.gg/..." />
+            </div>
+            <div class="form-group">
+              <label>Facebook URL</label>
+              <input type="url" id="settingFacebook" placeholder="https://facebook.com/..." />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Design Tab -->
+      <div class="tab-content" id="tab-design">
+        <div class="card">
+          <h3><i class="fas fa-paint-brush"></i> รูปแบบหน้าเข้าเว็บ (Gate Layout)</h3>
+          <div class="layout-options">
+            <label class="layout-option">
+              <input type="radio" name="gateLayout" value="centered" checked />
+              <div class="layout-preview centered">
+                <div class="preview-circle"></div>
+                <div class="preview-bar"></div>
+              </div>
+              <span>แบบเดิม (Centered)</span>
+            </label>
+            <label class="layout-option">
+              <input type="radio" name="gateLayout" value="split" />
+              <div class="layout-preview split">
+                <div class="preview-bar"></div>
+                <div class="preview-circle"></div>
+              </div>
+              <span>แบบใหม่ (Split / Premium)</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3><i class="fas fa-swatchbook"></i> ธีมเว็บไซต์</h3>
+          <div class="theme-grid" id="themeGrid">
+            <label class="theme-option">
+              <input type="radio" name="theme" value="default" checked />
+              <div class="theme-preview default"></div>
+              <span>Default</span>
+            </label>
+            <label class="theme-option">
+              <input type="radio" name="theme" value="neon" />
+              <div class="theme-preview neon"></div>
+              <span>Neon Circuit</span>
+            </label>
+            <label class="theme-option">
+              <input type="radio" name="theme" value="crimson" />
+              <div class="theme-preview crimson"></div>
+              <span>Crimson Night</span>
+            </label>
+            <label class="theme-option">
+              <input type="radio" name="theme" value="aurora" />
+              <div class="theme-preview aurora"></div>
+              <span>Aurora</span>
+            </label>
+            <label class="theme-option">
+              <input type="radio" name="theme" value="gold" />
+              <div class="theme-preview gold"></div>
+              <span>Royal Gold</span>
+            </label>
+            <label class="theme-option">
+              <input type="radio" name="theme" value="ocean" />
+              <div class="theme-preview ocean"></div>
+              <span>Deep Ocean</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3><i class="fas fa-magic"></i> เอฟเฟกต์หน้า Gate</h3>
+          <div class="form-grid">
+            <div class="form-group">
+              <label>เอฟเฟกต์พื้นหลัง</label>
+              <select id="settingParticles">
+                <option value="none">ไม่มี (None)</option>
+                <option value="particles">อนุภาค (Particles)</option>
+                <option value="stars">ดาว (Stars)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>แอนิเมชันเปิดตัวอักษร</label>
+              <select id="settingAnimation">
+                <option value="fade">ค่อยๆ โผล่ (Fade Up)</option>
+                <option value="slide">เลื่อนเข้า</option>
+                <option value="none">ไม่มี</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>สีหลัก (Accent Color)</label>
+              <input type="color" id="settingAccent" value="#c9a227" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Music Tab -->
+      <div class="tab-content" id="tab-music">
+        <div class="card">
+          <h3><i class="fas fa-music"></i> ตั้งค่าเสียงพื้นหลัง</h3>
+          <div class="form-group">
+            <label>ลิงก์เพลง (แนะนำไฟล์เสียงตรง)</label>
+            <input type="url" id="settingMusicUrl" placeholder="https://example.com/song.mp3 หรือ YouTube" />
+            <small>
+              <b>แนะนำ:</b> ใช้ลิงก์ไฟล์เสียงตรง (.mp3 / .ogg) จะเล่นได้ในเว็บ<br>
+              ถ้าใส่ YouTube → จะเปิดลิงก์ในแท็บใหม่เมื่อกดปุ่มเล่น (เบราว์เซอร์บล็อกเสียง YouTube โดยตรง)
+            </small>
+          </div>
+          <div class="form-group">
+            <label>ระดับเสียงเริ่มต้น (0-100)</label>
+            <input type="range" id="settingVolume" min="0" max="100" value="50" />
+            <span id="volumeValue">50%</span>
+          </div>
+          <div class="form-group">
+            <label>รูปแบบเครื่องเล่นเพลง</label>
+            <div class="player-style-options">
+              <label class="style-option">
+                <input type="radio" name="playerStyle" value="classic" checked />
+                <div class="style-preview">Classic</div>
+              </label>
+              <label class="style-option">
+                <input type="radio" name="playerStyle" value="vinyl" />
+                <div class="style-preview">Vinyl</div>
+              </label>
+              <label class="style-option">
+                <input type="radio" name="playerStyle" value="vip" />
+                <div class="style-preview">VIP Only</div>
+              </label>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>
+              <input type="checkbox" id="settingShowPlayer" checked /> แสดง Mini Player บนหน้าเว็บ
+            </label>
+            <small>ปิดแล้วจะไม่แสดงกล่องเพลงมุมล่างขวา (เพลงยังเล่นได้ถ้าเปิด Autoplay)</small>
+          </div>
+          <div class="form-group">
+            <label>
+              <input type="checkbox" id="settingAutoPlay" /> เปิดเพลงอัตโนมัติเมื่อเข้าเว็บ
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Danger Zone -->
+      <div class="tab-content" id="tab-danger">
+        <div class="card danger">
+          <h3><i class="fas fa-exclamation-triangle"></i> พื้นที่อันตราย (Danger Zone)</h3>
+          <p>การลบข้อมูลทั้งหมดในเว็บไซต์และสมาชิกทั้งหมดอย่างถาวร (ข้อมูลนี้จะถูกปล่อยว่างเพื่อให้คนอื่นสามารถใช้งานได้ ต้องสร้างและเพิ่มใหม่อย่างน้อย 3 วันจึงจะสามารถลบได้)</p>
+          <button class="btn-danger" id="resetAllBtn">
+            <i class="fas fa-trash-alt"></i> ลบข้อมูลทั้งหมดถาวร
+          </button>
+        </div>
+      </div>
+
+      <div class="save-bar">
+        <button class="btn-primary" id="saveSettingsBtn">
+          <i class="fas fa-save"></i> บันทึกการตั้งค่า
+        </button>
+      </div>
+    </main>
+  </div>
+
+  <script src="../js/config.js"></script>
+  <script src="../js/firebase-config.js"></script>
+  <script src="../js/db.js"></script>
+  <script src="../js/admin-settings.js"></script>
+</body>
+</html>
